@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('frontend.first-page.index');
+})->name('frontend.dekstop');
+
+Route::get('/home', function () {
+    return view('frontend.home-page.index');
+})->name('frontend.home');
+

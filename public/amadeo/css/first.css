@@ -1,0 +1,116 @@
+/* first */
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	#dekstop{
+		position: relative;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		background-color: rgb(0,0,0);
+		height: 100vh;
+		transition: all 2.51s;
+	}
+	#dekstop.in-view{
+		background-color: rgb(35,30,96);
+
+	}
+	#dekstop:before,
+	#dekstop:after{
+		content: '';
+		position: absolute;
+		height: 10vh;
+		width: 60%;
+		background-size: contain;
+		background-repeat: no-repeat;
+		z-index: 1;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 3.51s;
+	}
+	#dekstop:before{
+		top: 0;
+		right: 0;
+		background-position-x: 50vw;
+		background-position-y: top;	
+	}
+	#dekstop.in-view:before{
+		opacity: 1;
+		visibility: visible;
+		background-position-x: 0vw;	
+	}
+	#dekstop:after{
+		bottom: 0;
+		left: 0;
+		background-position-x: -50vw;
+		background-position-y: bottom;	
+	}
+	#dekstop.in-view:after{
+		opacity: 1;
+		visibility: visible;
+		background-position-x: 0vw;	
+	}
+	#dekstop #setup-space{
+		position: relative;
+		display: table;
+		width: 80%;
+		height: 80vh;
+		margin: 0 auto;
+		padding-top: 10vh;
+		padding-bottom: 10vh;
+		background-size: 37%;
+		background-position: right;
+		background-repeat-y: no-repeat;
+		background-repeat-x: repeat;
+		transition: all 2.51s;
+	}
+	#dekstop.in-view #setup-space{
+		background-position: left;
+	}
+	#dekstop #setup-space #vertical-midle{
+		position: relative;
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		height: 100%;
+	}
+	#dekstop #setup-space #vertical-midle .col{
+		position: relative;
+		margin: 0 auto;
+		padding: 10px 20px;
+		text-align: center;
+		transition: all 2.51s;
+	}
+	#dekstop.in-view #setup-space #vertical-midle .col{
+		background-color: rgb(35,30,96);
+	}
+	#dekstop #setup-space #vertical-midle #welcome.col{
+		width: 20%;
+		margin-bottom: 50px;
+		transform: translateY(20vh);
+		transition: all 2.51s;
+	}
+	#dekstop.in-view #setup-space #vertical-midle #welcome.col{
+		width: 25%;
+		transform: translateY(0);
+	}
+	#dekstop #setup-space #vertical-midle #welcome.col h2{
+		margin: 0;
+		padding: 0;
+		text-transform: uppercase;
+		color: rgb(201,153,43);
+	}
+	#dekstop #setup-space #vertical-midle #tingkat.col{
+		width: 10%;
+		transform: translateY(-20vh);
+		transition: all 2.51s;
+	}
+	#dekstop.in-view #setup-space #vertical-midle #tingkat.col{
+		width: 40%;
+		transform: translateY(0);
+	}
+	#dekstop #setup-space #vertical-midle #tingkat.col img{
+		width: 60%;
+	}
+/* first */
