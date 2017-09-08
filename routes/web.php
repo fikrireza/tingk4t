@@ -37,7 +37,7 @@
 		$call = Projects::where('flag_publish', 'Y')->orderBy('post_date', 'desc')->get();
 	    return view('frontend.project-page.index', compact('call'));
 	})->name('frontend.projects');
-	
+
 	Route::get('/contact', function () {
 	    return view('frontend.contact-page.index');
 	})->name('frontend.contact');
@@ -68,11 +68,15 @@
       // Inbox
       Route::get('inbox', 'Backend\InboxController@index')->name('inbox.index');
 
+
+			// Account
       Route::get('account', 'Backend\AccountController@index')->name('account.index');
       Route::post('account', 'Backend\AccountController@store')->name('account.store');
       Route::patch('account/update', 'Backend\AccountController@update')->name('account.update');
 
-      Route::get('account/profile', 'Backend\AccountController@profile')->name('account.profile');
+			Route::get('account/profile', 'Backend\AccountController@profile')->name('account.profile');
+			Route::post('account/profile', 'Backend\AccountController@changeProfile')->name('account.changeProfile');
+      Route::post('account/profile/password', 'Backend\AccountController@changePassword')->name('account.changePassword');
 
     });
 
