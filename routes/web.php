@@ -11,25 +11,37 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.first-page.index');
-})->name('frontend.dekstop');
+// START FRONTEND
+	Route::get('/', function () {
+	    return view('frontend.first-page.index');
+	})->name('frontend.dekstop');
 
-Route::get('/home', function () {
-    return view('frontend.home-page.index');
-})->name('frontend.home');
+	Route::get('/home', function () {
+	    return view('frontend.home-page.index');
+	})->name('frontend.home');
 
-Route::get('/about/our-commitment', function () {
-    return view('frontend.about-page.our-commitment');
-})->name('frontend.about.our-commitment');
+	Route::get('/about/our-commitment', function () {
+	    return view('frontend.about-page.our-commitment');
+	})->name('frontend.about.our-commitment');
 
-Route::get('/about/flow-design', function () {
-    return view('frontend.about-page.flow-design');
-})->name('frontend.about.flow-design');
+	Route::get('/about/flow-design', function () {
+	    return view('frontend.about-page.flow-design');
+	})->name('frontend.about.flow-design');
 
-Route::get('/services', function () {
-    return view('frontend.services-page.index');
-})->name('frontend.services');
+	Route::get('/services', function () {
+	    return view('frontend.services-page.index');
+	})->name('frontend.services');
+
+	use App\Models\Projects;
+	Route::get('/projects', function () {
+		$call = Projects::where('flag_publish', 'Y')->orderBy('post_date', 'desc')->get();
+	    return view('frontend.project-page.index', compact('call'));
+	})->name('frontend.projects');
+	
+	Route::get('/contact', function () {
+	    return view('frontend.contact-page.index');
+	})->name('frontend.contact');
+// END FRONTEND
 
 // START BACKEND
   // Auth::routes();

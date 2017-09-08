@@ -22,6 +22,7 @@
 		text-align: center;
 		color: rgba(255,255,255,0);
 		text-transform: uppercase;
+	    font-family: 'gothampro medium';
 		opacity: 0;
 		visibility: hidden;
 		transition: all 2.53s;
@@ -95,6 +96,7 @@
 		transition: 1.51s;
 	}
 	#main-content.show-discrip #two.main-slide #content h1{
+	    font-family: 'gothampro medium';
 		visibility: visible;
 		opacity: 1;	
 		color: rgb(35,30,94);
@@ -115,6 +117,7 @@
 		transition-delay: 2.1s;
 	}
 	#main-content.show-discrip #two.main-slide #content p{
+	    font-family: 'gothampro';
 		visibility: visible;
 		opacity: 1;
 		color: rgb(35,30,94);

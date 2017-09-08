@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	@yield("meta-page")
 
+	<link rel="stylesheet" type="text/css" href="{{ asset('amadeo/font/font-family.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('amadeo/css/navigation.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('amadeo/css/public.css') }}">
 	<style type="text/css">
@@ -61,12 +62,16 @@
 				</a>
 			</div>
 			<div class="list">
-				<a href="">
+				<a 
+					href="{{ route('frontend.projects') }}"
+					class="{{ route::is('frontend.projects') ? 'active' : '' }}">
 					projects
 				</a>
 			</div>
 			<div class="list">
-				<a href="">
+				<a 
+					href="{{ route('frontend.contact') }}"
+					class="{{ route::is('frontend.contact') ? 'active' : '' }}">
 					contact
 				</a>
 			</div>
