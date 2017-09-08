@@ -32,9 +32,8 @@
 	    return view('frontend.services-page.index');
 	})->name('frontend.services');
 
-	use App\Models\Projects;
 	Route::get('/projects', function () {
-		$call = Projects::where('flag_publish', 'Y')->orderBy('post_date', 'desc')->get();
+		$call = App\Models\Projects::where('flag_publish', 'Y')->orderBy('post_date', 'desc')->get();
 	    return view('frontend.project-page.index', compact('call'));
 	})->name('frontend.projects');
 
