@@ -1,0 +1,65 @@
+#main-content{
+	transform: translateY(-100vh) rotateY(-180deg);
+	border-radius: 0 0 600% 600%;
+	transition: all 1.51s;
+}
+#main-content.in-view{
+	border-radius: 0;
+	transform: translateY(0vh) rotateY(0deg);
+	background-color: rgb(255,255,255);
+}
+#main-content #title{
+	display: table;
+	width: 100%;
+}
+#main-content #title h1{
+	display: table-cell;
+	width: 100%;
+	height: 100vh;
+	vertical-align: middle;
+	margin: 0 auto;
+	color: rgba(0,0,0,0);
+	text-shadow: 
+		40vw 0 rgba(30,35,94,0),
+		-40vw 0 rgba(30,35,94,0);
+	text-align: center;
+	text-transform: uppercase;
+	transition: all 1.51s;
+}
+#main-content.in-view #title h1{
+	height: 20vh;
+	transition-delay: 1.21s;
+	text-shadow: 
+		0vw 0 rgba(30,35,94,1),
+		0vw 0 rgba(30,35,94,1);
+}
+#main-content #title h1:before,
+#main-content #title h1:after{
+	content: '';
+	position: relative;
+	display: inline-grid;
+	width: 35%;
+	border-top: 4px dotted rgb(35,30,94);
+	padding-top: 8px;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 1.51s;
+}
+#main-content #title h1:before{
+	margin-right: -220px;
+}
+#main-content #title h1:after{
+	margin-left: -220px;
+}
+#main-content.in-view #title h1:before{
+	visibility: visible;
+	opacity: 1;	
+	margin-right: 40px;
+	transition-delay: 1.81s;
+}
+#main-content.in-view #title h1:after{
+	visibility: visible;
+	opacity: 1;	
+	margin-left: 40px;
+	transition-delay: 1.81s;
+}

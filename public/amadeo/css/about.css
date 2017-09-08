@@ -100,6 +100,7 @@ body{
 	width: 100%;
 	margin: 0 auto;
 	margin-top: 30px;
+    font-family: 'gothampro medium';
 	text-align: center;
 	text-transform: uppercase;
 	color: rgb(35,30,94);
@@ -160,6 +161,7 @@ body{
 	margin: 0 auto;
 }
 #main-content.in-view #main .content-wrapper .content-col p{
+    font-family: 'gothampro medium';
 	padding: 0px;
 	color: rgb(35,30,94);
 }

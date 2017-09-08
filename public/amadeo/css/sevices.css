@@ -33,6 +33,7 @@ body{
 	margin: 0 auto;
 }
 #main-content #content h1{
+    font-family: 'gothampro medium';
 	text-align: center;
 	text-transform: uppercase;
 	color: rgba(35,30,94,0);
@@ -80,6 +81,7 @@ body{
 	padding-left: 2%;
 }
 #main-content #content .col p{
+    font-family: 'gothampro';
 	text-align: justify;
 	color: rgb(35,30,94);
 	visibility: hidden;

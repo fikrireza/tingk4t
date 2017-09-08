@@ -77,6 +77,7 @@
 		display: none;
 	}
 	#navigasi #nav-wrapper-list .list a{
+	    font-family: 'gothampro medium';
 		cursor: pointer;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -120,6 +121,7 @@
 		background-color: rgb(35,30,96);
 		text-align: center;
 		text-transform: uppercase;
+	    font-family: 'gothampro medium';
 		font-size: 12px;
 		color: rgb(119,116,155);
 	}

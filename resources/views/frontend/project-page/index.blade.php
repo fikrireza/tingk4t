@@ -29,6 +29,15 @@
 				</div>
 			</div>
 			@endfor
+			{{--
+			@foreach($call as $list)
+			<div class="project-bg" style="background-image: url('{{ asset('amadeo/images-base/'.$list->img_thumb) }}');" data-image='{!! $list->img_large !!}' data-location='{!! $list->location !!}' data-scope='{!! $list->scope !!}'>
+				<div class="project-cl">
+					<h3>title {{ $a }} in here</h3>
+				</div>
+			</div>
+			@endforeach
+			--}}
 		</div>
 	</div>
 	<div id="view-project">
@@ -54,11 +63,13 @@
 <script type="text/javascript">
 	$("#project-content-list .project-bg").click(function(){
 		var bg 			= $(this).css('background-image');
+		// var image		= $(this).data('image');
 		var location 	= $(this).data('location');
 		var scope 		= $(this).data('scope');
 		var title 		= $(this).children().children().html();
 
 		$("#view-project #img").css('background-image', bg);
+		// $("#view-project #img").css('background-image', image);
 		$("#view-project h1#title").html(title);
 		$("#view-project p#location").html(location);
 		$("#view-project p#scope").html(scope);
