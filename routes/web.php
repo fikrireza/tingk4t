@@ -30,3 +30,7 @@ Route::get('/about/flow-design', function () {
 Route::get('/services', function () {
     return view('frontend.services-page.index');
 })->name('frontend.services');
+
+Route::get('/projects', function () {
+    return view('frontend.project-page.index');
+})->name('frontend.projects');

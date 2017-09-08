@@ -47,6 +47,6 @@
 	<script type="text/javascript">
 		window.setTimeout(function() {
 		    $("#main-content").addClass('show-discrip');
-	  }, 3832);
+		}, 3832);
 	</script>
 @endsection

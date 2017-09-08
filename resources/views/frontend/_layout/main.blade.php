@@ -61,7 +61,9 @@
 				</a>
 			</div>
 			<div class="list">
-				<a href="">
+				<a 
+					href="{{ route('frontend.projects') }}"
+					class="{{ route::is('frontend.projects') ? 'active' : '' }}">
 					projects
 				</a>
 			</div>
