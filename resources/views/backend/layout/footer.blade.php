@@ -1,4 +1,4 @@
 <div class="pull-right">
-  <a href="#">PANCA LOGAM - AMADEO</a>
+  <a href="#">TINGKAT - AMADEO</a>
 </div>
 <div class="clearfix"></div>
