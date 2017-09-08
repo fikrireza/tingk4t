@@ -24,6 +24,7 @@ class CreateProjectsTable extends Migration
             $table->string('img_thumb_alt');
             $table->date('post_date');
             $table->string('flag_publish', 1)->default('Y');
+            $table->string('slug');
             $table->timestamps();
         });
     }
