@@ -44,6 +44,18 @@ Route::get('/services', function () {
 
       Route::get('dashboard', 'Backend\DashboardController@index')->name('dashboard');
 
+      // Projects
+      Route::get('projects', 'Backend\ProjectsController@index')->name('projects.index');
+      Route::get('projects/add', 'Backend\ProjectsController@add')->name('projects.add');
+      Route::post('projects/add', 'Backend\ProjectsController@store')->name('projects.store');
+      Route::get('projects/edit/{slug}', 'Backend\ProjectsController@edit')->name('projects.edit');
+      Route::post('projects/edit', 'Backend\ProjectsController@update')->name('projects.update');
+      Route::get('projects/publish/{id}', 'Backend\ProjectsController@publish')->name('projects.publish');
+      Route::get('produk/delete/{id}', 'Backend\ProjectsController@delete')->name('projects.delete');
+
+      // Inbox
+      Route::get('inbox', 'Backend\InboxController@index')->name('inbox.index');
+
       Route::get('account', 'Backend\AccountController@index')->name('account.index');
       Route::post('account', 'Backend\AccountController@store')->name('account.store');
       Route::patch('account/update', 'Backend\AccountController@update')->name('account.update');

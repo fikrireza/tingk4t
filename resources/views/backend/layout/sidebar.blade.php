@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col menu_fixed">
   <div class="left_col scroll-view">
     <div class="navbar nav_title" style="border: 0;">
-      <a href="" class="site_title"> <span>Dashboard</span></a>
+      <a href="" class="site_title"> <span>TINGKAT</span></a>
     </div>
 
     <div class="clearfix"></div>
@@ -25,25 +25,9 @@
           <li class="{{ Route::is('dashboard') ? 'active' : '' }}">
             <a href="{{ route('dashboard') }}"><i class="fa fa-home"></i> Dashboard </a>
           </li>
-          {{-- @if (Auth::user()->can('read-provider') || Auth::user()->can('read-provider-prefix'))
-          <li class="{{ Route::is('provider*') ? 'active' : '' }}">
-            <a>
-              <i class="fa fa-phone"></i> Manage Provider <span class="fa fa-chevron-down"></span>
-            </a>
-            <ul class="nav child_menu" style="{{ Route::is('provider*') ? 'display: block;' : '' }}">
-              @can('read-provider')
-              <li class="{{ Route::is('provider.index') ? 'current-page' : '' }}">
-                <a href="{{ route('provider.index') }}">Provider</a>
-              </li>
-              @endcan
-              @can('read-provider-prefix')
-              <li class="{{ Route::is('provider-prefix.index') ? 'current-page' : '' }}">
-                <a href="{{ route('provider-prefix.index') }}">Provider Prefix</a>
-              </li>
-              @endcan
-            </ul>
+          <li class="{{ Route::is('projects*') ? 'active' : '' }}">
+            <a href="{{ route('projects.index') }}"><i class="fa fa-gear"></i> Projects </a>
           </li>
-          @endif --}}
         </ul>
       </div>
       <div class="menu_section">
