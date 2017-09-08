@@ -28,6 +28,9 @@
           <li class="{{ Route::is('projects*') ? 'active' : '' }}">
             <a href="{{ route('projects.index') }}"><i class="fa fa-gear"></i> Projects </a>
           </li>
+          <li class="{{ Route::is('inbox*') ? 'active' : '' }}">
+            <a href="{{ route('inbox.index') }}"><i class="fa fa-envelope"></i> Inbox </a>
+          </li>
         </ul>
       </div>
       <div class="menu_section">
