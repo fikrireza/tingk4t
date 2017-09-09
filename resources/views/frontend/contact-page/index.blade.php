@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('amadeo/css/contact.css') }}">
 	<style type="text/css">
 	</style>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 @endsection
 
 @section('content')
@@ -23,24 +24,33 @@
 		</div>
 		<div id="content">
 			<div class="float">
-				<form id="contact-form" method="post" action="">
+				<form id="contact-form" method="post" action="{{ route('frontend.contact.store') }}">
 					{{ csrf_field() }}
 					@if(Session::has('alert'))
 						<script>
 						  window.setTimeout(function() {
-						    $(".alert.alert-dismissible").fadeTo(700, 0).slideUp(700, function(){
+						    $("form div.alert").fadeTo(700, 0).slideUp(700, function(){
 						        $(this).remove();
 						    });
 						  }, 5000);
 						</script>
-						<div class="alert {{ Session::get('alert') }} alert-dismissible fade in" role="alert">
-					      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-					      </button>
+						<div class="alert {{ Session::get('alert') }}" role="alert">
 					      <strong>{{ Session::get('info') }}</strong>
 					    </div>
 					@endif
+					@if($errors->has('subject'))
+						<code><span class="alret">{{ $errors->first('subject')}}</span></code>
+					@endif
+					<input 
+						name="subject" 
+						type="text" 
+						class="form-control" 
+						placeholder="Subject*"
+						value="{{ old('subject') }}" 
+						{{ Session::has('autofocus') ? 'autofocus' : ''}}
+					>
 					@if($errors->has('email'))
-						<code><span style="color:red; font-size:12px;">{{ $errors->first('email')}}</span></code>
+						<code><span class="alret">{{ $errors->first('email')}}</span></code>
 					@endif
 					<input 
 						name="email" 
@@ -48,10 +58,9 @@
 						class="form-control" 
 						placeholder="Email Address*"
 						value="{{ old('email') }}" 
-						{{ Session::has('autofocus') ? 'autofocus' : ''}}
 					>
 					@if($errors->has('name'))
-						<code><span style="color:red; font-size:12px;">{{ $errors->first('name')}}</span></code>
+						<code><span class="alret">{{ $errors->first('name')}}</span></code>
 					@endif
 					<input 
 						name="name" 
@@ -60,19 +69,30 @@
 						placeholder="Your Name*"
 						value="{{ old('name') }}" 
 					>
+					@if($errors->has('telp'))
+						<code><span class="alret">{{ $errors->first('telp')}}</span></code>
+					@endif
+					<input 
+						name="telp" 
+						type="text" 
+						class="form-control" 
+						placeholder="Your Phone*"
+						value="{{ old('telp') }}"
+						onkeypress="return isNumber(event)" 
+					>
 					@if($errors->has('message'))
-						<code><span style="color:red; font-size:12px;">{{ $errors->first('message')}}</span></code>
+						<code><span class="alret">{{ $errors->first('message')}}</span></code>
 					@endif
 					<textarea 
 						name="message" 
 						class="form-control" 
-						placeholder="Message" 
-						rows="10"
+						placeholder="Message*" 
+						rows="5"
 					>{{ old('message') }}</textarea>
 					<button class="button" type="button">
 						Submit
 					</button>
-					<div class="g-recaptcha" data-sitekey="6LcoAS4UAAAAAHQ-NpZB7oZIeQ_IH-BUL6NuZqpw" data-callback="submitThisForm"></div>
+					<div class="g-recaptcha" data-sitekey="6LcoAS4UAAAAAHQ-NpZB7oZIeQ_IH-BUL6NuZqpw" data-callback="submitThisForm" style="display: none;"></div>
 				</form>
 			</div>
 			<div class="float">
@@ -83,4 +103,21 @@
 @endsection
 
 @section('script')
+<script type="text/javascript">
+	$('button.button').click(function(){
+		$(this).hide();
+		$("div.g-recaptcha").show();
+	});
+	function submitThisForm(){
+		$("form#contact-form").submit();
+	}
+	function isNumber(evt) {
+	  	evt = (evt) ? evt : window.event;
+	  	var charCode = (evt.which) ? evt.which : evt.keyCode;
+	  	if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+	  		return false;
+	  	}
+	  	return true;
+	  }
+</script>
 @endsection
