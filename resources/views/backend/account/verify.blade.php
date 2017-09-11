@@ -69,7 +69,7 @@
 
               <div class="separator">
                 <div>
-                  <h1>Aquasolve - Gofress | <a href="http://amadeo.id"></a>Amadeo.id</h1>
+                  <h1>Tingkat | <a href="http://amadeo.id">Amadeo.id</a></h1>
                   <p>©2017 All Rights Reserved.</p>
                 </div>
               </div>

@@ -45,6 +45,9 @@
     Route::post('login', 'Auth\LoginController@login')->name('login');
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
+		Route::get('verify/{confirmation_code}', 'Backend\AccountController@verify')->name('verify.index')->middleware('guest');
+		Route::post('verify', 'Backend\AccountController@verifyStore')->name('verify.store');
+
     // Middleware Auth
     Route::middleware(['auth'])->group(function(){
 
@@ -66,8 +69,10 @@
 			// Account
       Route::get('account', 'Backend\AccountController@index')->name('account.index');
       Route::post('account', 'Backend\AccountController@store')->name('account.store');
+			Route::get('account/reset/{id}', 'Backend\AccountController@reset')->name('account.reset');
       Route::patch('account/update', 'Backend\AccountController@update')->name('account.update');
 
+			// Account Profile
 			Route::get('account/profile', 'Backend\AccountController@profile')->name('account.profile');
 			Route::post('account/profile', 'Backend\AccountController@changeProfile')->name('account.changeProfile');
       Route::post('account/profile/password', 'Backend\AccountController@changePassword')->name('account.changePassword');
