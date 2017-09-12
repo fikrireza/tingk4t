@@ -35,6 +35,8 @@
 	Route::post('/contact/store', 'Frontend\FrontendController@contactStore')
 		->name('frontend.contact.store');
 
+	Route::get('/single-page', 'Frontend\FrontendController@singlePage')
+		->name('frontend.singlePage');
 // END FRONTEND
 
 // START BACKEND

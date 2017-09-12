@@ -92,11 +92,11 @@
 					<button class="button" type="button">
 						Submit
 					</button>
-					<div class="g-recaptcha" data-sitekey="6LcoAS4UAAAAAHQ-NpZB7oZIeQ_IH-BUL6NuZqpw" data-callback="submitThisForm" style="display: none;"></div>
+					<div class="g-recaptcha" data-sitekey="6LdUKDAUAAAAALg_qt6N-7qXDnMxpejOceyFLfSV" data-callback="submitThisForm" style="display: none;"></div>
 				</form>
 			</div>
 			<div class="float">
-				<iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4096047806356!2d106.62833971476904!3d-6.209582895504822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x320687ba53b4daa!2sPT.+Berri+Indosari!5e0!3m2!1sen!2sus!4v1503296702902" frameborder="0" style="border:0" allowfullscreen></iframe>
+				<iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8256289319916!2d106.76961231476876!3d-6.154102995544352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f634c139d2b1%3A0xbb162ec3fc1824ea!2sPT+Digital+Indonesia!5e0!3m2!1sid!2sid!4v1505094252437" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
 		</div>
 	</div>

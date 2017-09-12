@@ -13,7 +13,15 @@ use Validator;
 
 class FrontendController extends Controller
 {
-    function dekstop() {
+  function singlePage() {
+    $call = Projects::where('flag_publish', 'Y')
+      ->orderBy('post_date', 'desc')
+      ->get();
+      
+    return view('frontend.single-page', compact('call'));
+  }
+
+  function dekstop() {
 	    return view('frontend.first-page.index');
 	}
 

@@ -22,27 +22,18 @@
 			<h1>projects</h1>
 		</div>
 		<div id="project-content-list">
-			@for($a=1; $a<=8; $a++)
-			<div class="project-bg" style="background-image: url('{{ asset('amadeo/images-base/project-'.$a.'.jpg') }}');" data-location='location {{ $a }} in here test dengan text yg panjang misalkan di jalan laksamana maeda block 3C no 61A/61B, Senen Jakarta' data-scope='scope {{ $a }} in here <ul><li>test</li><li>test</li><li>test</li><li>test</li><li>test</li></ul>'>
-				<div class="project-cl">
-					<h3>title {{ $a }} in here</h3>
-				</div>
-			</div>
-			@endfor
-			{{--
 			@foreach($call as $list)
-			<div class="project-bg" style="background-image: url('{{ asset('amadeo/images-base/'.$list->img_thumb) }}');" data-image='{!! $list->img_large !!}' data-location='{!! $list->location !!}' data-scope='{!! $list->scope !!}'>
+			<div class="project-bg" style="background-image: url('{{ asset('amadeo/images/projects/'.$list->img_thumb) }}');" data-image="url('{{ asset('amadeo/images/projects/'.$list->img_large) }}')" data-location='{!! $list->location !!}' data-scope='{!! $list->scope !!}'>
 				<div class="project-cl">
-					<h3>title {{ $a }} in here</h3>
+					<h3>{!! $list->name !!}</h3>
 				</div>
 			</div>
 			@endforeach
-			--}}
 		</div>
 	</div>
 	<div id="view-project">
 		<div id="wrapper">
-			<div id="img" class="float" style="background-image: url('{{ asset('amadeo/images-base/project-1.jpg') }}');">
+			<div id="img" class="float" style="background-image:;">
 				
 			</div>
 			<div id="description" class="float">
@@ -62,14 +53,12 @@
 @section('script')
 <script type="text/javascript">
 	$("#project-content-list .project-bg").click(function(){
-		var bg 			= $(this).css('background-image');
-		// var image		= $(this).data('image');
+		var image		= $(this).data('image');
 		var location 	= $(this).data('location');
 		var scope 		= $(this).data('scope');
 		var title 		= $(this).children().children().html();
 
-		$("#view-project #img").css('background-image', bg);
-		// $("#view-project #img").css('background-image', image);
+		$("#view-project #img").css('background-image', image);
 		$("#view-project h1#title").html(title);
 		$("#view-project p#location").html(location);
 		$("#view-project p#scope").html(scope);
