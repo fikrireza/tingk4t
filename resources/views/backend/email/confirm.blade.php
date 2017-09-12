@@ -18,8 +18,8 @@
       Password : <b>12345678</b>
       <br>
       <br>
-      <a href="{{ URL::to('/') }}">
-        {{ URL::to('/') }}
+      <a href="{{ URL::to('admin/verify/' . $data[0]['confirmation_code']) }}">
+        {{ URL::to('admin/verify/' . $data[0]['confirmation_code']) }}
       </a>
     </p>
 

@@ -1,7 +1,7 @@
 @extends('backend.layout.master')
 
 @section('title')
-  <title>Gofress | Profil</title>
+  <title>Tingkat | Profil</title>
 @endsection
 
 @section('headscript')
@@ -60,7 +60,7 @@
         <div class="clearfix"></div>
       </div>
       <div class="x_content">
-        <form class="form-horizontal form-label-left" action="{{ route('users.new') }}" method="post">
+        <form class="form-horizontal form-label-left" action="{{ route('account.store') }}" method="post">
           {{ csrf_field() }}
           <div class="item form-group {{ $errors->has('name') ? 'has-error' : ''}}">
             <label class="control-label col-md-2 col-sm-2 col-xs-12">Nama</label>
@@ -115,10 +115,10 @@
             @endphp
             @foreach ($getUsers as $key)
             <tr>
-              <td>{{ $no }}</td>
+              <td>{{ $no++ }}</td>
               <td>{{ $key->name }}</td>
               <td>{{ $key->email }}</td>
-              <td class="text-center"><img src="{{ asset('images/users').'/'.$key->avatar}}"></td>
+              <td class="text-center"><img src="{{ asset('backend/images/profile').'/'.$key->avatar}}"></td>
               <td>@if ($key->confirmed == 1)
                     <span class="label label-success"><i class="fa fa-thumbs-o-up"></i></span>
                   @else
@@ -131,9 +131,6 @@
               @else - @endif
               </td>
             </tr>
-            @php
-              $no++;
-            @endphp
             @endforeach
           </tbody>
         </table>
@@ -155,7 +152,7 @@
   $(function(){
     $('#usertabel').on('click', 'a.reset', function(){
       var a = $(this).data('value');
-      $('#setReset').attr('href', "{{ url('/') }}/admin/users/reset/"+a);
+      $('#setReset').attr('href', "{{ url('/') }}/admin/account/reset/"+a);
     });
   });
 </script>

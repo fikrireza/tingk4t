@@ -76,7 +76,15 @@ class LoginController extends Controller
             $set->login_count = $getCounter+1;
             $set->update();
 
-            return redirect()->route('dashboard');
+            if($set->status == 'N')
+            {
+              return redirect()->route('account.profile')->with('berhasil', 'Welcome Back '.$set->name.' Please Change Your Password');
+            }
+            else
+            {
+              return redirect()->route('dashboard');
+            }
+
         }
         else
         {
