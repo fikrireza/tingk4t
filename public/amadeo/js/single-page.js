@@ -28,7 +28,7 @@
 	$(document).ready(function() {
 
 	    var win = $(window);
-	    if( win.width() < 740 && win.width() > 480){
+	    if( win.width() < 740 ){
 	    	$('#navigasi img#block-w').click(function(){
 	    		// alert('ok');
 	    		if ($('#navigasi').hasClass('open')) {
@@ -43,6 +43,22 @@
 			});
 	    }
 	});
+
+	$('button.button').click(function(){
+		$(this).hide();
+		$("div.g-recaptcha").show();
+	});
+	function submitThisForm(){
+		$("form#contact-form").submit();
+	}
+	function isNumber(evt) {
+	  	evt = (evt) ? evt : window.event;
+	  	var charCode = (evt.which) ? evt.which : evt.keyCode;
+	  	if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+	  		return false;
+	  	}
+	  	return true;
+	  }
 // publict
 	
 	// scroll to soft
@@ -63,31 +79,37 @@
 	// scroll to soft
 
 	// animate in view
-		var $animation_elements = $('.animation-element');
-	    var $window = $(window);
+	$(document).ready(function() {
 
-	    function check_if_in_view() {
-	      var window_height = $window.height();
-	      var window_top_position = $window.scrollTop();
-	      var window_bottom_position = (window_top_position + window_height);
+	    var win = $(window);
+	    if( win.width() > 740 ){
+			var $animation_elements = $('.animation-element');
+		    var $window = $(window);
 
-	      $.each($animation_elements, function() {
-	        var $element = $(this);
-	        var element_height = $element.outerHeight();
-	        var element_top_position = $element.offset().top;
-	        var element_bottom_position = (element_top_position + element_height);
+		    function check_if_in_view() {
+		      var window_height = $window.height();
+		      var window_top_position = $window.scrollTop();
+		      var window_bottom_position = (window_top_position + window_height);
 
-	        //check to see if this current container is within viewport
-	        if ((element_bottom_position >= window_top_position) &&
-	          (element_top_position <= window_bottom_position)) {
-	          	$element.addClass('in-view');
-	        } else {
-	          $element.removeClass('in-view');
-	        }
-	      });
-	    }
+		      $.each($animation_elements, function() {
+		        var $element = $(this);
+		        var element_height = $element.outerHeight();
+		        var element_top_position = $element.offset().top;
+		        var element_bottom_position = (element_top_position + element_height);
 
-	    $window.on('scroll resize', check_if_in_view);
-	    $window.trigger('scroll');
+		        //check to see if this current container is within viewport
+		        if ((element_bottom_position >= window_top_position) &&
+		          (element_top_position <= window_bottom_position)) {
+		          	$element.addClass('in-view');
+		        } else {
+		          $element.removeClass('in-view');
+		        }
+		      });
+		    }
+
+		    $window.on('scroll resize', check_if_in_view);
+		    $window.trigger('scroll');
+		}
+	});
 	// animate in view
 // publict

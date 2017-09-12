@@ -35,6 +35,8 @@
 		}
 	</style>
 	<link rel="stylesheet" type="text/css" href="{{ asset('amadeo/css/home.css') }}">
+	
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 </head>
 <body>
